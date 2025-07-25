@@ -1,0 +1,14 @@
+[Unit]
+Description=USB Gadget Setup
+DefaultDependencies=no
+After=usb-gadget.target
+Before=network.target
+ConditionPathExists=/bin/usb-gadget-setup.sh
+
+[Service]
+Type=oneshot
+ExecStart=/bin/usb-gadget-setup.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
