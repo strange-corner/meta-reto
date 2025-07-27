@@ -10,6 +10,9 @@ SRC_URI += "file://usb1.network"
 SYSTEMD_SERVICE:${PN} = "usb-gadget-setup.service"
 SYSTEMD_AUTO_ENABLE:${PN} = "enable"
 
+SYSTEMD_SERVICE:getty-ttyGS0 = "serial-getty@ttyGS0.service"
+SYSTEMD_AUTO_ENABLE:getty-ttyGS0 = "enable"
+
 do_install() {
     install -d ${D}${sysconfdir}/systemd/network
     install -m 0644 ${WORKDIR}/usb0.network ${D}${sysconfdir}/systemd/network/
