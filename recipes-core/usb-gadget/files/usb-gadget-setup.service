@@ -1,6 +1,5 @@
 [Unit]
 Description=USB Gadget Setup
-DefaultDependencies=no
 After=usb-gadget.target
 Before=network.target
 ConditionPathExists=/bin/usb-gadget-setup.sh
