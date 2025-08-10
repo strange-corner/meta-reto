@@ -22,10 +22,6 @@ do_install() {
     
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/usb-gadget-setup.service ${D}${systemd_system_unitdir}/usb-gadget-setup.service
-
-    # Symlink für serial-getty@ttyGS0 aktivieren
-    install -d ${D}${systemd_system_unitdir}/getty.target.wants
-    ln -sf ../serial-getty@.service ${D}${systemd_system_unitdir}/getty.target.wants/serial-getty@ttyGS0.service
 }
 
 FILES:${PN} += "${bindir}/usb-gadget-setup.sh"
