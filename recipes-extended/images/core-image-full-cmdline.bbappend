@@ -12,3 +12,7 @@ IMAGE_ROOTFS_EXTRA_SPACE = "262144"
 # Override entry found in mety-ti/meta-ti-bsp/conf/machine/include/ti33x.inc
 # because I want this image flash into eMMC. Is that the way to do it?
 UBOOT_EXTLINUX_ROOT = "root=/dev/mmcblk1p2"
+
+IMAGE_INSTALL:append = " \
+        swupdate \
+"
