@@ -26,6 +26,7 @@ Run 'bitbake-layers add-layer meta-reto'
 Installing the image
 ====================
 * Boot from SD card by holding button S2 while switching on power.
-* Transfer image (core-image-full-cmdline*.wic.xz) to board with SFTP
+* Transfer image (core-image-full-cmdline*.wic.xz) to target with SFTP
 * extract it: ``xz -d core-image-full-cmdline-am335x-evm.rootfs-20250907052752.wic.xz``
 * write it to eMMC: ``sudo dd if=core-image-full-cmdline-am335x-evm.rootfs-20250907052752.wic of=/dev/mmcblk1 bs=1M status=progress``
+* Transfer and run set_bl_params.sh on target (needed because open issue).
