@@ -22,3 +22,10 @@ I. Adding the meta-reto layer to your build
 =================================================
 
 Run 'bitbake-layers add-layer meta-reto'
+
+Installing the image
+====================
+* Boot from SD card by holding button S2 while switching on power.
+* Transfer image (core-image-full-cmdline*.wic.xz) to board with SFTP
+* extract it: ``xz -d core-image-full-cmdline-am335x-evm.rootfs-20250907052752.wic.xz``
+* write it to eMMC: ``sudo dd if=core-image-full-cmdline-am335x-evm.rootfs-20250907052752.wic of=/dev/mmcblk1 bs=1M status=progress``
